@@ -17,7 +17,14 @@ try {
     $sql = $conn->query("SELECT * FROM employee");
 
     echo "<table>";
-    echo "<tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Phone</th><th>Department</th></tr>";
+    echo "<tr>
+    <th>FName</th>
+    <th>LName</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Department</th>
+    <th>Action</th>
+    </tr>";
     while ($row = $sql->fetch()) {
         echo "<tr>
         <td>" . $row['fname'] . "</td>
@@ -25,6 +32,8 @@ try {
         <td>" . $row['email'] . "</td>
         <td>" . $row['phone'] . "</td>
         <td>" . $row['department'] . "</td>
+        <td><a href='update.php?id=" . $row['id'] . "'>Edit</a>
+        <a href='delete.php?id=" . $row['id'] . "'>Delete</a> </td>
         </tr>";
     }
     echo "</table>";
@@ -34,3 +43,20 @@ try {
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+    crossorigin="anonymous">
+    <title>View</title>
+</head>
+<body>
+<a href="logout.php"><button type="button" class="btn btn-dark" id="logout" name="logout">logout</button></a>
+</body>
+</html>

@@ -22,7 +22,7 @@ if (isset($_SESSION['admin'])) {
     box-sizing: border-box;
     }
     body{
-        background: bisque
+        background: whitesmoke
     }
     .row{
         background: white;
@@ -51,14 +51,11 @@ if (isset($_SESSION['admin'])) {
     </style>
 </head>
 <body>
-    <section class="form my-4 mx-5">
-        <div class="container">
+    <section class="form my-5 mx-8">
+        <div class="container" style="width:50%;">
         <div class="row no-gutters">
-                <div class="col-lg-5">
-                    <img src="https://images.pexels.com/photos/4467738/pexels-photo-4467738.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img" alt="" height="500px" width="500px">
-                </div>
-            <div class="col-lg-7 px-5 pt-5">
-                    <h1 class="font-weight-bold py-3">Login</h1>
+            <div class="col-lg-12 px-5 pt-5">
+                    <h1 class="font-weight-bold py-3">Admin Login</h1>
                     <h4>Sign into your account</h4>
 
                     <form method="post" action="login_data.php">
